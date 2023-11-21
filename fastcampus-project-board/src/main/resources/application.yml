@@ -26,6 +26,9 @@ spring:
   data.rest:
     base-path: /api
     detection-strategy: annotated
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
 #  thymeleaf3.decoupled-logic: true
   security:
     oauth2:

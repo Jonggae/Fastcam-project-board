@@ -3,17 +3,28 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
+
 group = 'com.fastcampus'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
+
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
     }
 }
+
 repositories {
     mavenCentral()
 }
+
+// QueryDSL 버전 명시
+dependencyManagement {
+    imports {
+        mavenBom "com.querydsl:querydsl-bom:5.0.0"
+    }
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -40,7 +51,6 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
-
 
 // Querydsl 설정부
 def generated = 'src/main/generated'
