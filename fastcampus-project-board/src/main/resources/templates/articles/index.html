@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>게시판 페이지</title>
 </head>
 <body>
 
-<header th:replace="header :: header"></header>
+<header id="header"></header>
 
 <main>
     <form>
@@ -16,7 +16,7 @@
             <option>본문</option>
             <option>ID</option>
             <option>닉네임</option>
-            <option>닉네임해시태그</option>
+            <option>해시태그</option>
         </select>
         <label for="search-value" hidden>검색어</label>
         <input id="search-value" type="search" placeholder="검색어..." name="search-value">
@@ -68,7 +68,7 @@
     </nav>
 </main>
 
-<footer th:replace="footer :: footer"></footer>
+<footer id="footer"></footer>
 
 </body>
 </html>
