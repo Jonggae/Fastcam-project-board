@@ -26,7 +26,6 @@ spring:
   data.rest:
     base-path: /api
     detection-strategy: annotated
-#  thymeleaf3.decoupled-logic: true
   security:
     oauth2:
       client:
@@ -43,6 +42,8 @@ spring:
             token-uri: https://kauth.kakao.com/oauth/token
             user-info-uri: https://kapi.kakao.com/v2/user/me
             user-name-attribute: id
+  thymeleaf3:
+    decoupled-logic: true
 
 ---
 
