@@ -9,8 +9,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.Import;
 
 import java.util.List;
-import static org.assertj.core.api.Assertions.assertThat;
 
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 @DisplayName("JPA 연결 테스트")
@@ -48,9 +48,9 @@ class JpaRepositoryTest {
         long previousCount = articleRepository.count();
 
         // When
-        Article savedArticle = articleRepository.save(Article.of("new article","new content","#spring"));
+        Article savedArticle = articleRepository.save(Article.of("new article", "new content", "#spring"));
         // Then
-        assertThat(articleRepository.count()).isEqualTo(previousCount+1);
+        assertThat(articleRepository.count()).isEqualTo(previousCount + 1);
     }
 
     @Test
@@ -66,7 +66,7 @@ class JpaRepositoryTest {
         Article savedArticle = articleRepository.saveAndFlush(article);
 
         // Then
-        assertThat(savedArticle).hasFieldOrPropertyWithValue("hashtag",updateHashtag);
+        assertThat(savedArticle).hasFieldOrPropertyWithValue("hashtag", updateHashtag);
     }
 
     @Test
@@ -83,8 +83,8 @@ class JpaRepositoryTest {
         articleRepository.delete(article);
 
         // Then
-    assertThat(articleRepository.count()).isEqualTo(previousArticleCount-1);
-    assertThat(articleCommentRepository.count()).isEqualTo(previousArticleCommentCount-deletedCommentSize);
+        assertThat(articleRepository.count()).isEqualTo(previousArticleCount - 1);
+        assertThat(articleCommentRepository.count()).isEqualTo(previousArticleCommentCount - deletedCommentSize);
 
     }
 }
